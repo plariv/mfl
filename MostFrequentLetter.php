@@ -46,12 +46,12 @@
 // MostFrequentLetter.php
 //
 // This runner identifies the most frequently occurring letter in an arbitrary
-// text string by analyzing the string using a couple of classes: 
+// text string by using function 'mfl', which is a wrapper for a couple of
+// classes that conduct the analysis: 
 //    SampleText - profiles the string's constituent words and letters
 //    Examiner - examines a SampleText object for the most frequent letter
 
-    require_once ('SampleText.php');
-    require_once ('Examiner.php');
+    require_once('mfl.php');
 
     if ($argc != 2 || in_array($argv[1], array('--help', '-help', '-h', '-?'))) {
 ?>
@@ -68,13 +68,9 @@
 <?php
     } else {
 
-        $sampleTextObject = new SampleText($argv[1]);
-        $sampleTextObject->profile();
-        $textExaminer = new Examiner($sampleTextObject);
-        $textExaminer->findMostFrequent();
-    
-        print "The most frequently occurring letter is... " . $textExaminer->mostfrequentltr . "\n";
-        print "It occurs " . $textExaminer->mostfrequentltrcount . " times in the word... " . $textExaminer->mostfrequentword . "\n";
+        $selectedword = '';
+        $selectedword = mostfrequentletter($argv[1]);
+        print "The word is... " . $selectedword . "\n";
 
     }
 

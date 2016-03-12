@@ -31,16 +31,6 @@
 // Output: “people”
 // Explanation: Both “people” and “feel” have a letter that is repeated 
 // twice within the word. This is a tie, and the first word wins.
-//
-// Approach
-//
-// 1. Input entire text and parse into constituent letter set
-// 2. Get a frequency count of each letter in entire string
-// 3. Sort frequency descending
-// 4. Calculate frequency/containing-word-count for each letter
-// 5. Sort by ratio descending
-// 6. Find first word with highest ratio letter
-// 7. Print word index
 
 require_once ('SampleText.php');
 require_once ('Examiner.php');
